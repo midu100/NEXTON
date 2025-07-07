@@ -55,10 +55,10 @@ const Banner = () => {
               style={{
                 background: `url(${bannerBg})`,
                 backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
+                // backgroundPosition: "center",
                 backgroundSize: "cover",
               }}
-              className="lg:py-[148px] pt-[163px] pb-[199px]"
+              className="lg:py-[148px] pt-[163px] pb-[199px] bg-left lg:bg-center"
             >
               <div className="container">
                 <div className="bannerText">

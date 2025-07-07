@@ -7,6 +7,7 @@ import { PiShoppingCartSimple } from "react-icons/pi";
 const ResNav = () => {
   // hook or useState
   const [showNav, setShowNav] = useState(false);
+  const [ShowRes, setShowRes] = useState(false);
 
   return (
     <>
@@ -58,12 +59,15 @@ const ResNav = () => {
                 <button className="w-[24px] h-[24px] text-[24px]">
                   <RiUserLine />
                 </button>
-                <button className="w-[24px] h-[24px] text-[24px] ml-[22px] relative">
+                <button
+                  className="w-[24px] h-[24px] text-[24px] ml-[22px] relative"
+                >
                   <PiShoppingCartSimple />
                   <span className="w-[20px] h-[20px] rounded-full bg-[#0EA5E9] flex justify-center items-center text-[12px] font-medium font-poppins text-[#fff] absolute top-[-5px] right-[-10px]">
                     3
                   </span>
                 </button>
+
               </div>
 
               <ul className="flex flex-col items-center gap-[10px] text-[20px] text-white font-poppins font-semibold">
