@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from '../components/Banner'
 import Service from '../components/Service'
 import Category from '../components/Category'
+import Reco from '../components/Reco'
 
 
 
@@ -12,6 +13,7 @@ const Home = () => {
       <Banner />
       <Service />
       <Category />
+      <Reco />
  
     </>
   )
