@@ -3,7 +3,7 @@ import axios from "axios";
 import SingleReco from "./common/SingleReco";
 import CommonHead from "./common/CommonHead";
 import { Link } from "react-router";
-import AllReco from "./AllReco";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -27,7 +27,7 @@ var settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 4,
     slidesToScroll: 1,
   };
 
@@ -37,35 +37,24 @@ var settings = {
         <div className="container">
           <CommonHead
             commonH={"Recommendations."}
-            commonS={" Best matching products for you"}
-          />
-          <div className="row flex justify-between flex-wrap">
-
-           
-
-            {
-
-                 
+            commonS={" Best matching products for you"}/>
 
 
-                Product.slice(0,4).map((item,i)=>{
-                    return(
-                        
-                         <SingleReco key={i} proImg={item.image} proName={item.title} proPrice={item.price} proDis={"$199.99"} proRat={item.rating.rate} proTotal={item.rating.count} />
-                    )
-                })
-
-
-                // Product.slice(0,4).map((item,i)=>{
-                //     return(
-                //          <SingleReco key={i} proImg={item.image} proName={item.title} proPrice={item.price} proDis={"$199.99"} proRat={item.rating.rate} proTotal={item.rating.count} />
-                //     )
-                // })
-            }
-            
+          <div className="slider-container">
+              <Slider {...settings}>
+                     
+                  {
+                        Product.map((item,i)=>{
+                            return(
+                                 <SingleReco key={i} proImg={item.image} proName={item.title} proPrice={item.price} proDis={"$199.99"} proRat={item.rating.rate} proTotal={item.rating.count} />
+                            )
+                        })
+                  }   
+              </Slider>
           </div>
 
-          <div className="mt-[15px] flex justify-center">
+
+          <div className="mt-[50px] flex justify-center">
             <Link to='/allreco' className="py-[10px] px-[30px] bg-sky-600 rounded-2xl text-[20px] text-white font-poppins cursor-pointer hover:tracking-[1px] duration-[.4s]">See More</Link>
           </div>
         </div>
