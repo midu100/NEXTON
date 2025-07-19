@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import SingleReco from './common/SingleReco'
 import axios from 'axios'
+import AllProducts from './AllProducts'
+import BreadCrumb from './BreadCrumb'
 
 const AllReco = () => {
     const allReco = [
@@ -45,23 +47,16 @@ const AllReco = () => {
         },
     ]
 
-    // useState / HOOK
-    const[Add , setAdd] = useState([])
-
-    // fetch
-    useEffect(()=>{
-        axios.get('https://fakestoreapi.com/products')
-        .then((res)=>{setAdd(res.data)})
-        .catch((err)=>{console.log(err)})
-    },[])
-
-    console.log(Add)
+    
      
 
   return (
     <>
         <div id='allreco' className='bg-[#e5e7eb49] pt-[40px] py-[16px]'>
             <div className="container">
+
+                <BreadCrumb breadLink={'/allreco'} breadName={'All Product'} />
+
                 <div className="allRow flex gap-[20px] ">
 
                     <div id='sideMenu' className='w-[309px] p-[5px]'>
@@ -110,9 +105,9 @@ const AllReco = () => {
                                 Sort.map((item,s)=>{
                                     return(
                                         <div key={s} className='flex gap-[12px] items-center mt-[16px] '>
-                                <input name='radi' type='radio' className='w-[20px] h-[20px] accent-red-600 hover:accent-sky-600 hover:scale-[1.1] duration-300'></input>
-                                <p className='text-[14px] font-normal font-poppins text-[#4B5563]'>{item.Name}</p>
-                            </div>
+                                            <input name='radi' type='radio' className='w-[20px] h-[20px] accent-red-600 hover:accent-sky-600 hover:scale-[1.1] duration-300'></input>
+                                            <p className='text-[14px] font-normal font-poppins text-[#4B5563]'>{item.Name}</p>
+                                       </div>
                                     )
                                 })
                             }
@@ -123,16 +118,8 @@ const AllReco = () => {
 
                     </div>
 
-
-                    <div className='flex justify-between flex-wrap'>
-                        {
-                            Add.map((item)=>{
-                                return(
-                                    <SingleReco proName={item.title} proPrice={item.price} proImg={item.image} proRat={item.rating.rate} proTotal={item.rating.count}/>
-                                )
-                            })
-                        }
-                    </div>
+                   {/* Right */}
+                    <AllProducts />
 
                 </div>
             </div>

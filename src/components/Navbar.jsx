@@ -5,6 +5,7 @@ import { RiSearch2Line } from "react-icons/ri";
 import { RiUserLine } from "react-icons/ri";
 import { PiShoppingCartSimple } from "react-icons/pi";
 import { ImCross } from "react-icons/im";
+import Cart from "./Cart";
 
 const Navbar = () => {
   const [ShowNav, setShowNav] = useState(false);
@@ -33,10 +34,7 @@ const Navbar = () => {
               <button className="w-[24px] h-[24px] text-[24px]">
                 <RiUserLine />
               </button>
-              <button
-                onClick={() => setShowNav(!ShowNav)}
-                className={`relative w-[24px] h-[24px] text-[24px] ml-[22px]`}
-              >
+              <button onClick={() => setShowNav(!ShowNav)} className={`relative w-[24px] h-[24px] text-[24px] ml-[22px]`}>
                 <PiShoppingCartSimple />
                 <span className="w-[20px] h-[20px] rounded-full bg-[#0EA5E9] flex justify-center items-center text-[12px] font-medium font-poppins text-[#fff] absolute top-[-5px] right-[-10px]">
                   3
@@ -44,29 +42,13 @@ const Navbar = () => {
               </button>
             </div>
 
-            <div className={`w-full h-screen bg-[#0000005e] fixed   z-10 ${ShowNav ? "top-0 left-0" : "top-[-110%] "}`}>
-              <div className={`px-[20px] py-[10px] bg-black w-[20%] h-[90%] z-10 rounded-[10px] absolute  rounded-[10px] right-0  ${ShowNav ? "top-[70px]" : "top-[-100%]"} duration-[.4s]`} >
-         
-                <div className="flex justify-between items-center bg-primary p-[10px] rounded-[10px] ">
-                  <button
-                    onClick={() => setShowNav(!ShowNav)}
-                    className={`text-2xl w-[50px] h-[50px] font-bold text-white border-5 rounded-full cursor-pointer ${
-                      ShowNav ? "top-[70px]" : "top-[-100%]"
-                    }`}
-                  >
-                    X
-                  </button>
-
-                  <h2 className="font-bold text-[20px] text-white font-poppins">
-                    Add to Cart
-                  </h2>
-                </div>
-
-                <div></div>
-
-
-              </div>
-            </div>
+            {/* add to cart */}
+            {
+              ShowNav&&
+                <Cart closeCart={()=>setShowNav(!ShowNav)}/>
+            }
+            
+            
           </div>
         </div>
       </nav>

@@ -1,6 +1,7 @@
 import React from 'react'
 import product from '../../assets/img/product.png'
 import { FaStar } from "react-icons/fa6";
+import { Link } from 'react-router';
 
 const SingleReco = ({proName,proPrice,proDis,proRat,proImg,proTotal}) => {
 
@@ -24,6 +25,10 @@ const SingleReco = ({proName,proPrice,proDis,proRat,proImg,proTotal}) => {
         <div className='flex gap-[4px] items-center mt-[5px] px-[10px]'>
             <FaStar className='text-[20px] text-[#FBBF24]'/>
             <p className='text-[14px] font-poppins font-normal text-[#4B5563] '>{proRat}<span>({proTotal})</span></p>
+        </div>
+
+        <div>
+            <Link to={'/productdetails'}>Details</Link>
         </div>
 
     </div>
