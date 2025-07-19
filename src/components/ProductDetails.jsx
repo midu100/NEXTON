@@ -4,6 +4,7 @@ import { WiStars } from "react-icons/wi";
 import { PiStarFill } from "react-icons/pi";
 import { RiShoppingBag4Fill } from "react-icons/ri";
 import Reco from './Reco';
+import SliderImg from './common/SliderImg'
 
 const ProductDetails = () => {
     const keyWord = [
@@ -35,9 +36,13 @@ const ProductDetails = () => {
                 <div className="detailRow flex justify-between">
 
                     <div className="proDescription w-[804px]">
-                        <div className="Img ">
-                            <img className='w-[610px]' src={product} alt='product'/>
+                        <div className="Img">
+                            <SliderImg />
+                            {/* <img className='w-[610px]' src={product} alt='product'/> */}
                         </div>
+
+
+
                         <h2 className='mt-[105px] mb-[4px] text-[36px] font-semibold font-poppins text-second'>Black Automatic Watch</h2>
                         <p className='w-[735px] text-[16px] font-normal font-poppins text-[#4B5563]'>The St. Louis Meramec Canoe Company was founded by Alfred Wickett in 1922. Wickett had
                            previously worked for the Old Town Canoe Co from 1900 to 1914. Manufacturing of the classic
