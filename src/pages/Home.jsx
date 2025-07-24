@@ -3,6 +3,7 @@ import Banner from '../components/Banner'
 import Service from '../components/Service'
 import Category from '../components/Category'
 import Reco from '../components/Reco'
+import Footer from '../components/Footer'
 
 
 
@@ -14,6 +15,7 @@ const Home = () => {
       <Service />
       <Category />
       <Reco />
+      <Footer />
  
     </>
   )

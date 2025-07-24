@@ -131,7 +131,7 @@ const Cart = ({closeCart}) => {
                 
             </div>
 
-            <Link to={'/'} className='w-full bg-second py-3 px-5 text-[18px] font-medium font-poppins text-white inline-block rounded-2xl text-center'>Checkout</Link>
+            <Link to={'/checkout'} className='w-full bg-second py-3 px-5 text-[18px] font-medium font-poppins text-white inline-block rounded-2xl text-center'>Checkout</Link>
 
 
         </div>

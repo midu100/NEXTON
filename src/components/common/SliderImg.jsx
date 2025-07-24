@@ -8,12 +8,12 @@ import product2 from'../../assets/img/product2.jpg'
 import product3 from '../../assets/img/product3.jpg'
 
 // Dummy image URLs (change to your actual image paths)
-const images = [
-  product,product1,product2,product3]
 
-function WatchSlider() {
+function WatchSlider({proMainImg , proSubImg}) {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
+  
+  const images = [proSubImg,proSubImg,proSubImg,proSubImg]
 
   // Main big image settings
   const mainSettings = {
