@@ -7,6 +7,7 @@ import About from './pages/About'
 import AllReco from './components/AllReco'
 import ProductDetails from './components/ProductDetails'
 import CheckOut from './components/CheckOut'
+import Registration from './pages/Registration'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/allreco' element={<AllReco />} />
         <Route path='/productdetails/:alu' element={<ProductDetails />} />
         <Route path='/checkout' element={<CheckOut />} />
+        <Route path='/registration' element={<Registration />} />
       
       </Route>
     </Route>

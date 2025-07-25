@@ -4,6 +4,7 @@ import Service from '../components/Service'
 import Category from '../components/Category'
 import Reco from '../components/Reco'
 import Footer from '../components/Footer'
+import Registration from './Registration'
 
 
 

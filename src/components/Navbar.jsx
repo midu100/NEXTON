@@ -10,6 +10,10 @@ import Cart from "./Cart";
 const Navbar = () => {
   const [ShowNav, setShowNav] = useState(false);
 
+  const localProduct = JSON.parse(localStorage.getItem('Name'))
+  // console.log(localProduct)
+
+
   return (
     <>
       <nav id="navbar" className="py-[27px] hidden lg:block">
@@ -30,14 +34,15 @@ const Navbar = () => {
               />
             </div>
 
-            <div className="navButton">
-              <button className="w-[24px] h-[24px] text-[24px]">
+            <div className="navButton flex items-center">
+              {/* <button className="w-[24px] h-[24px] text-[24px]">
                 <RiUserLine />
-              </button>
+              </button> */}
+              <Link className="w-[24px] h-[24px]" to={'/registration'}><RiUserLine className="text-[24px]"/></Link>
               <button onClick={() => setShowNav(!ShowNav)} className={`relative w-[24px] h-[24px] text-[24px] ml-[22px]`}>
                 <PiShoppingCartSimple />
                 <span className="w-[20px] h-[20px] rounded-full bg-[#0EA5E9] flex justify-center items-center text-[12px] font-medium font-poppins text-[#fff] absolute top-[-5px] right-[-10px]">
-                  3
+                  {localProduct ? localProduct.length : 0}
                 </span>
               </button>
             </div>
