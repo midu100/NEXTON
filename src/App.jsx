@@ -8,6 +8,8 @@ import AllReco from './components/AllReco'
 import ProductDetails from './components/ProductDetails'
 import CheckOut from './components/CheckOut'
 import Registration from './pages/Registration'
+import Login from './pages/Login'
+import { ToastContainer, toast  } from 'react-toastify';
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
         <Route path='/productdetails/:alu' element={<ProductDetails />} />
         <Route path='/checkout' element={<CheckOut />} />
         <Route path='/registration' element={<Registration />} />
+        <Route path='/login' element={<Login />} />
       
       </Route>
     </Route>
@@ -27,6 +30,7 @@ function App() {
 
   return (
     <>
+    <ToastContainer />
       <RouterProvider router={myRoute} />
       
     </>
