@@ -13,7 +13,7 @@ const Login = () => {
             setFormData((prev)=>({...prev,errorPassword:'Enter your Password'}))
         }
         else{
-            toast.success('🦄 Login Successful !', {
+            toast.success('🦄 Login Successful  !', {
 position: "top-right",
 autoClose: 5000,
 hideProgressBar: false,

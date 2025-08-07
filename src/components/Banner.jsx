@@ -1,12 +1,17 @@
 import React from "react";
 import bannerBg from "../assets/img/bannerBg.png";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { CiSearch } from "react-icons/ci";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { useDispatch } from "react-redux";
+import { incrementByAmount } from "../SrcSlice";
 
 const Banner = () => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
   const settings = {
     dots: true,
     infinite: true,
@@ -14,6 +19,11 @@ const Banner = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
+  const handleExplore = ()=>{
+    dispatch(incrementByAmount(null))
+    navigate('/allreco')
+  }
 
   return (
     <>
@@ -38,13 +48,12 @@ const Banner = () => {
                   <h1 className="text-[30px] lg:text-[64px] font-semibold font-poppins text-second w-full lg:w-[632px] leading-[38px] lg:leading-[72px] mb-[40px] lg:my-[24px]">
                     Exclusive collection for everyone
                   </h1>
-                  <Link
-                    className="flex gap-[10px] items-center py-[12px] px-[24px] lg:py-[20px] lg:px-[36px] bg-second rounded-full w-fit text-[16px] font-poppins font-medium text-white lg:hover:scale-[1.1] duration-[.4s]"
-                    to={"#"}
+                  <button onClick={handleExplore}
+                    className="BannerEXPLORE flex gap-[10px] items-center py-[12px] px-[24px] lg:py-[20px] lg:px-[36px] bg-second rounded-full w-fit text-[16px] font-poppins font-medium text-white cursor-pointer"
                   >
                     Explore now{" "}
                     <CiSearch className="text-[20px] text-[#F8FAFC]" />
-                  </Link>
+                  </button>
                 </div>
               </div>
             </section>

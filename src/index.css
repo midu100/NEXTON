@@ -12,3 +12,26 @@
   --color-primary : #4B5563 ;
   --color-second : #111827 ;
 }
+
+/* banner */
+.BannerEXPLORE{
+    position: relative;
+    transition: all .4s linear;
+    z-index: 25;
+}
+.BannerEXPLORE::after{
+    content: '';
+    height: 100%;
+    width: 0;
+    background: rgb(5, 170, 236);
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 100px;
+    /* z-index: -1; */
+    transition: all .4s linear;
+}
+.BannerEXPLORE:hover::after{
+  width: 100%;
+  z-index: -1;
+}

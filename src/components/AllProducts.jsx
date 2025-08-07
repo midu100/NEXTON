@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import SingleReco from './common/SingleReco'
 import Pagination from "./Pagination";
 import { useNavigate } from 'react-router';
+import { useSelector } from 'react-redux';
 
 const AllProducts = () => {
 
@@ -11,16 +12,24 @@ const AllProducts = () => {
   const [page, setPage] = useState(1);
   const itemsPerPage = 6;
 
+  const reduxProduct = useSelector((state)=>state.redu.value)
+
   useEffect(() => {
     axios
       .get("https://fakestoreapi.com/products")
-      .then((res) => {
-        setProducts(res.data);
+      // .then((res) => {
+      //   setProducts(res.data);
+      // })
+      .then((res)=>{
+        if(!reduxProduct) return setProducts(res.data)
+
+        const filterProduct = res.data.filter((item)=>item.title == reduxProduct)
+        setProducts(filterProduct)
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [reduxProduct]);
 
   const start = (page - 1) * itemsPerPage;
   const currentItems = products.slice(start, start + itemsPerPage);

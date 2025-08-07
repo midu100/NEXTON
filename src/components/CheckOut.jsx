@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import BreadCrumb from './BreadCrumb'
 import { FaRegCircleUser } from "react-icons/fa6";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { CiCreditCard2 } from "react-icons/ci";
 import OrderSummary from './common/OrderSummary';
+import axios from 'axios';
 
 const CheckOut = () => {
+    
   return (
     <>
          <section id='checkOut' className='pt-[40px] pb-[72px]'>
