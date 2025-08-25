@@ -7,9 +7,12 @@ import { Link, useNavigate } from "react-router";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../SrcSlice";
 
 const Reco = () => {
   const [Product, setProduct] = useState([]);
+  const dispatch = useDispatch()
 
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products`)
@@ -44,6 +47,7 @@ var settings = {
     existId.push(data)
     localStorage.setItem('Name',JSON.stringify(existId))
     console.log(existId)
+    dispatch(addToCart(existId))
 
   }
 

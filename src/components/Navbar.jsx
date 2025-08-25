@@ -7,7 +7,7 @@ import { PiShoppingCartSimple } from "react-icons/pi";
 import Cart from "./Cart";
 import axios from "axios";
 import SearchBG from '../assets/img/SearchBG.jpg'
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { incrementByAmount } from "../SrcSlice";
 
 const Navbar = () => {
@@ -17,7 +17,8 @@ const Navbar = () => {
   const navigate = useNavigate()
   const dispatch =useDispatch()
 
-  const localProduct = JSON.parse(localStorage.getItem('Name'))
+  // const localProduct = JSON.parse(localStorage.getItem('Name'))
+  const localProduct = useSelector((state)=>state.redu.cartItems)
   console.log(localProduct)
 
    const [Product, setProduct] = useState([]);
@@ -99,7 +100,7 @@ const Navbar = () => {
           <h2 className="text-xl font-poppins text-center">Product Not Found.</h2>
           :
           srcResult?.map((item)=>(
-            <h2 onClick={()=>handleProduct(item.title)} key={item.id} className="text-xl font-poppins text-center">{item.title}</h2>
+            <h2 onClick={()=>handleProduct(item.title)} key={item.id} className="text-xl font-poppins text-center cursor-pointer">{item.title}</h2>
           ))
         }
       </div>
